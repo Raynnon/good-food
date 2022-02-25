@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
+
+import { SearchLocation } from './src/components/SearchLocation';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Test</Text>
+      <SearchLocation />
       <StatusBar barStyle="default" />
     </View>
   );
@@ -15,6 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingTop: 15,
-    backgroundColor: 'red'
+    backgroundColor: '#f5f5f5'
   }
 });
