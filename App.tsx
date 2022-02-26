@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar, ScrollView } from 'react-native';
 
 import { SearchLocation } from './src/components/SearchLocation';
 
