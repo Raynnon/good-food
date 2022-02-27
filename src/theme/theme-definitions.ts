@@ -12,3 +12,7 @@ export interface Fonts {
   body: string;
   heading: string;
 }
+
+export interface Background {
+  primary: string;
+}

@@ -2,7 +2,7 @@ import { Fonts, FontSizes } from '../theme-definitions';
 
 export const fonts: Fonts = {
   body: 'Roboto_400Regular',
-  heading: 'Roboto_500Medium'
+  heading: 'Nunito_700Bold'
 };
 
 export const fontSizes: FontSizes = {

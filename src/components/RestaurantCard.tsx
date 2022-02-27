@@ -3,7 +3,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 
 import { theme } from '../theme/theme';
-import { fontSizes } from '../theme/styles/fonts';
 
 export type RestaurantCardProps = {
   key: number;
@@ -63,8 +62,9 @@ const style = StyleSheet.create({
     fontSize: theme.fontSizes.p
   },
   grade: {
+    fontFamily: theme.fonts.heading,
     textAlign: 'right',
-    fontSize: theme.fontSizes.h2,
+    fontSize: theme.fontSizes.h3,
     paddingTop: theme.space[2]
   }
 });
