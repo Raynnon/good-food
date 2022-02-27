@@ -17,28 +17,28 @@ export const SearchLocation = () => {
     },
     {
       key: 2,
-      name: "L'olive Bleue",
+      name: 'Chez Marcel',
       adress: '25, rue du Moulin',
       city: 'Le Teich',
       grade: 3.1
     },
     {
       key: 3,
-      name: "L'olive Bleue",
+      name: 'Goinfrez vous!',
       adress: '25, avenue Boris Vian',
       city: 'Le Teich',
       grade: 4.1
     },
     {
       key: 4,
-      name: "L'olive Bleue",
+      name: 'Can Sergi',
       adress: '5, rue de la paix',
       city: 'Le Teich',
       grade: 2.3
     },
     {
       key: 5,
-      name: "L'olive Bleue",
+      name: 'Veganland',
       adress: '12, impasse de Leyre',
       city: 'Le Teich',
       grade: 3.4
@@ -51,25 +51,32 @@ export const SearchLocation = () => {
         style={styles.searchbar}
         onChangeText={(text: string) => setSearch(text)}
         onIconPress={() => console.log(search)}
+        value={search}
       />
 
-      <FlatList
-        data={restaurants}
-        renderItem={({ item }) => (
-          <RestaurantCard
-            key={item.key}
-            name={item.name}
-            adress={item.adress}
-            city={item.city}
-            grade={item.grade}
-          />
-        )}
-        showsVerticalScrollIndicator={false}
-      />
+      <View style={styles.cardsContainer}>
+        <FlatList
+          data={restaurants}
+          renderItem={({ item }) => (
+            <RestaurantCard
+              key={item.key}
+              name={item.name}
+              adress={item.adress}
+              city={item.city}
+              grade={item.grade}
+            />
+          )}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  searchbar: { width: 300 }
+  cardsContainer: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  searchbar: { width: 350 }
 });

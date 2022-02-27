@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 
-import { sizes, fontSizes } from '../utils/sizes';
+import { theme } from '../theme/theme';
+import { fontSizes } from '../theme/styles/fonts';
 
 export type RestaurantCardProps = {
   key: number;
@@ -29,9 +30,9 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
       />
       <Card.Content style={style.cardContent}>
         <View>
-          <Title>{name}</Title>
-          <Paragraph>{adress}</Paragraph>
-          <Paragraph>{city}</Paragraph>
+          <Title style={style.restaurantName}>{name}</Title>
+          <Paragraph style={style.text}>{adress}</Paragraph>
+          <Paragraph style={style.text}>{city}</Paragraph>
         </View>
         <View style={style.gradeContainer}>
           <Text style={style.grade}>{grade}</Text>
@@ -42,16 +43,28 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
 };
 
 const style = StyleSheet.create({
-  card: { marginTop: sizes.sm, marginBottom: sizes.sm },
+  card: {
+    width: 300,
+    marginTop: theme.space[2],
+    marginBottom: theme.space[2]
+  },
   cardContent: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center'
   },
   gradeContainer: { flex: 1 },
+  restaurantName: {
+    fontFamily: theme.fonts.heading,
+    fontSize: theme.fontSizes.h4
+  },
+  text: {
+    fontFamily: theme.fonts.body,
+    fontSize: theme.fontSizes.p
+  },
   grade: {
     textAlign: 'right',
-    fontSize: fontSizes.lg,
-    paddingTop: sizes.sm
+    fontSize: theme.fontSizes.h2,
+    paddingTop: theme.space[2]
   }
 });
