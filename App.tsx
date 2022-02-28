@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 
-import { SearchLocation } from './src/components/SearchLocation';
+import { SearchLocation } from './src/components/features/SearchLocation';
 
 import { theme } from './src/theme/theme';
+import { colors } from './src/theme/styles/colors';
 
 import {
   useFonts as useRoboto,
@@ -40,6 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingTop: theme.space[2],
-    backgroundColor: theme.background.primary
+    backgroundColor: theme.colors.lightGrey
   }
 });

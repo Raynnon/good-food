@@ -1,5 +1,6 @@
-import { Background } from '../theme-definitions';
+import { Colors } from '../theme-definitions';
 
-export const background: Background = {
-  primary: '#f5f5f5'
+export const colors: Colors = {
+  darkGrey: '#212121',
+  lightGrey: '#f5f5f5'
 };

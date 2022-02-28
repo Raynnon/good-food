@@ -13,6 +13,7 @@ export interface Fonts {
   heading: string;
 }
 
-export interface Background {
-  primary: string;
+export interface Colors {
+  darkGrey: string;
+  lightGrey: string;
 }

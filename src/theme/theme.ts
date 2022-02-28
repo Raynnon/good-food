@@ -1,19 +1,19 @@
-import { Fonts, FontSizes, Background } from './theme-definitions';
+import { Fonts, FontSizes, Colors } from './theme-definitions';
 
 import { fonts, fontSizes } from './styles/fonts';
 import { space } from './styles/spacing';
-import { background } from './styles/colors';
+import { colors } from './styles/colors';
 
 interface Theme {
   fonts: Fonts;
   fontSizes: FontSizes;
   space: number[];
-  background: Background;
+  colors: Colors;
 }
 
 export const theme: Theme = {
   fonts,
   fontSizes,
   space,
-  background
+  colors
 };
