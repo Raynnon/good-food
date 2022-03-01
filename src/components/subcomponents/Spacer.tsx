@@ -31,7 +31,7 @@ export const Spacer: React.FC<SpacerProps> = ({
         case 'top':
           return theme.space[spaces[0]];
           break;
-        case 'rigth':
+        case 'right':
           return theme.space[spaces[1]];
           break;
         case 'bottom':
