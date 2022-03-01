@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
 import { RestaurantCard, RestaurantCardProps } from './RestaurantCard';
+
+import { Spacer } from '../subcomponents/Spacer';
 
 export const SearchLocation = () => {
   const [search, setSearch] = useState('');
@@ -46,7 +48,7 @@ export const SearchLocation = () => {
   ];
 
   return (
-    <View>
+    <Spacer>
       <Searchbar
         style={styles.searchbar}
         onChangeText={(text: string) => setSearch(text)}
@@ -54,7 +56,7 @@ export const SearchLocation = () => {
         value={search}
       />
 
-      <View style={styles.cardsContainer}>
+      <Spacer style={styles.cardsContainer}>
         <FlatList
           data={restaurants}
           renderItem={({ item }) => (
@@ -68,14 +70,13 @@ export const SearchLocation = () => {
           )}
           showsVerticalScrollIndicator={false}
         />
-      </View>
-    </View>
+      </Spacer>
+    </Spacer>
   );
 };
 
 const styles = StyleSheet.create({
   cardsContainer: {
-    flex: 1,
     alignItems: 'center'
   },
   searchbar: { width: 350 }

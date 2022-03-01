@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
 import { SearchLocation } from './src/components/features/SearchLocation';
+import { Spacer } from './src/components/subcomponents/Spacer';
 
 import { theme } from './src/theme/theme';
-import { colors } from './src/theme/styles/colors';
 
 import {
   useFonts as useRoboto,
@@ -29,18 +29,16 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <Spacer style={styles.container} padding={[2, 0, 0, 0]}>
       <SearchLocation />
       <StatusBar barStyle="default" />
-    </View>
+    </Spacer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    paddingTop: theme.space[2],
     backgroundColor: theme.colors.lightGrey
   }
 });

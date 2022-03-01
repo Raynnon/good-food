@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 
 import { theme } from '../../theme/theme';
 import { TextComponent } from '../subcomponents/TextComponent';
+import { Spacer } from '../subcomponents/Spacer';
 
 export type RestaurantCardProps = {
   key: number;
@@ -29,7 +30,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
         }}
       />
       <Card.Content style={style.cardContent}>
-        <View>
+        <Spacer flex={0}>
           <TextComponent type={'heading'} size={'h4'}>
             {name}
           </TextComponent>
@@ -37,8 +38,9 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
           <TextComponent type={'heading'} size={'p'}>
             {city}
           </TextComponent>
-        </View>
-        <View style={style.gradeContainer}>
+        </Spacer>
+
+        <Spacer>
           <TextComponent
             style={style.grade}
             type={'heading'}
@@ -47,7 +49,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
           >
             {grade}
           </TextComponent>
-        </View>
+        </Spacer>
       </Card.Content>
     </Card>
   );
@@ -64,7 +66,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  gradeContainer: { flex: 1 },
   grade: {
     textAlign: 'right',
     paddingTop: theme.space[2]
