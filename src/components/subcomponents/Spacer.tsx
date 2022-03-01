@@ -15,7 +15,7 @@ export type SpacerProps = {
 
 export const Spacer: React.FC<SpacerProps> = ({
   style,
-  flex = 1,
+  flex = 0,
   margin = 0,
   padding = 0,
   ...props

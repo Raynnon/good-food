@@ -30,7 +30,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
         }}
       />
       <Card.Content style={style.cardContent}>
-        <Spacer flex={0}>
+        <Spacer>
           <TextComponent type={'heading'} size={'h4'}>
             {name}
           </TextComponent>
@@ -40,7 +40,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
           </TextComponent>
         </Spacer>
 
-        <Spacer>
+        <Spacer flex={1}>
           <TextComponent
             style={style.grade}
             type={'heading'}
@@ -57,7 +57,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
 
 const style = StyleSheet.create({
   card: {
-    width: 300,
+    width: 376,
     marginTop: theme.space[2],
     marginBottom: theme.space[2]
   },

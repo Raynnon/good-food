@@ -14,6 +14,8 @@ export interface Fonts {
 }
 
 export interface Colors {
+  primary: string;
   darkGrey: string;
   lightGrey: string;
+  white: string;
 }

@@ -48,15 +48,15 @@ export const SearchLocation = () => {
   ];
 
   return (
-    <Spacer>
+    <Spacer style={styles.container} flex={1} padding={[2, 0, 0, 0]}>
       <Searchbar
         style={styles.searchbar}
-        onChangeText={(text: string) => setSearch(text)}
+        onChangeText={(text) => setSearch(text)}
         onIconPress={() => console.log(search)}
         value={search}
       />
 
-      <Spacer style={styles.cardsContainer}>
+      <Spacer style={styles.cardsContainer} flex={1}>
         <FlatList
           data={restaurants}
           renderItem={({ item }) => (
@@ -76,8 +76,9 @@ export const SearchLocation = () => {
 };
 
 const styles = StyleSheet.create({
+  container: { alignItems: 'center' },
   cardsContainer: {
     alignItems: 'center'
   },
-  searchbar: { width: 350 }
+  searchbar: { width: 400 }
 });
