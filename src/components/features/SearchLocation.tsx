@@ -7,7 +7,7 @@ import { RestaurantCard, RestaurantCardProps } from './RestaurantCard';
 import { Spacer } from '../subcomponents/Spacer';
 
 export const SearchLocation = () => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState<string>('');
 
   const restaurants: RestaurantCardProps[] = [
     {

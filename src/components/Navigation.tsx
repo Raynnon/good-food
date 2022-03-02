@@ -5,13 +5,19 @@ import { SearchLocation } from './features/SearchLocation';
 
 import { theme } from '../theme/theme';
 
+interface Route {
+  key: string;
+  title: string;
+  icon: string;
+}
+
 const RestaurantRoute = () => <SearchLocation />;
 const MapRoute = () => <Text>Map</Text>;
 const OptionsRoute = () => <Text>Options</Text>;
 
 export const Navigation = () => {
-  const [index, setIndex] = useState(0);
-  const [routes] = useState([
+  const [index, setIndex] = useState<number>(0);
+  const [routes] = useState<Route[]>([
     { key: 'restaurants', title: 'Restaurants', icon: 'silverware-fork-knife' },
     { key: 'map', title: 'Map', icon: 'map-outline' },
     { key: 'options', title: 'Options', icon: 'cog-outline' }
