@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StatusBar } from 'react-native';
+import { RestaurantContextProvider } from './src/services/restaurants/restaurants-context';
 
 import { Navigation } from './src/components/Navigation';
 
@@ -12,23 +13,7 @@ import {
   Nunito_700Bold
 } from '@expo-google-fonts/nunito';
 
-import { restaurantsRequest } from './src/services/restaurants/restaurants-service';
-
 export default function App() {
-  useEffect(() => {
-    const restaurants = async () => {
-      try {
-        const result = await restaurantsRequest();
-
-        console.log(result);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    restaurants();
-  }, []);
-
   const [robotoLoaded]: [boolean, Error | null] = useRoboto({
     Roboto_400Regular
   });
@@ -43,7 +28,10 @@ export default function App() {
 
   return (
     <>
-      <Navigation />
+      <RestaurantContextProvider>
+        <Navigation />
+      </RestaurantContextProvider>
+
       <StatusBar barStyle="default" />
     </>
   );

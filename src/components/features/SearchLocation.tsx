@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
@@ -6,10 +6,13 @@ import { RestaurantCard, RestaurantCardProps } from './RestaurantCard';
 
 import { Spacer } from '../subcomponents/Spacer';
 
+import { RestaurantsContext } from '../../services/restaurants/restaurants-context';
+
 export const SearchLocation = () => {
   const [search, setSearch] = useState<string>('');
+  const restaurantContext = useContext(RestaurantsContext);
 
-  const restaurants: RestaurantCardProps[] = [
+  /* const restaurants: RestaurantCardProps[] = [
     {
       key: 1,
       name: "L'olive Bleue",
@@ -45,7 +48,7 @@ export const SearchLocation = () => {
       city: 'Le Teich',
       grade: 3.4
     }
-  ];
+  ]; */
 
   return (
     <Spacer style={styles.container} flex={1} padding={[2, 0, 0, 0]}>
@@ -58,7 +61,7 @@ export const SearchLocation = () => {
 
       <Spacer style={styles.cardsContainer} flex={1}>
         <FlatList
-          data={restaurants}
+          data={restaurantContext.restaurants}
           renderItem={({ item }) => (
             <RestaurantCard
               key={item.key}
